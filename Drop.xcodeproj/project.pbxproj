@@ -14,6 +14,9 @@
 		CFFC31FF1E62071200985A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFC31FD1E62071200985A0F /* LaunchScreen.storyboard */; };
 		CFFC320A1E62071200985A0F /* DropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32091E62071200985A0F /* DropTests.swift */; };
 		CFFC32151E62071200985A0F /* DropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32141E62071200985A0F /* DropUITests.swift */; };
+		CFFC32251E620EB200985A0F /* VaccineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */; };
+		CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */; };
+		CFFC32291E62156900985A0F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CFFC32281E62156900985A0F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		CFFC32101E62071200985A0F /* DropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFC32141E62071200985A0F /* DropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropUITests.swift; sourceTree = "<group>"; };
 		CFFC32161E62071200985A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineTableViewCell.swift; sourceTree = "<group>"; };
+		CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFFC32281E62156900985A0F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		CFFC31E81E62071200985A0F = {
 			isa = PBXGroup;
 			children = (
+				CFFC32281E62156900985A0F /* .gitignore */,
 				CFFC31F31E62071200985A0F /* Drop */,
 				CFFC32081E62071200985A0F /* DropTests */,
 				CFFC32131E62071200985A0F /* DropUITests */,
@@ -103,6 +110,8 @@
 				CFFC31FB1E62071200985A0F /* Assets.xcassets */,
 				CFFC31FD1E62071200985A0F /* LaunchScreen.storyboard */,
 				CFFC32001E62071200985A0F /* Info.plist */,
+				CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */,
+				CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */,
 			);
 			path = Drop;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFC32291E62156900985A0F /* .gitignore in Resources */,
 				CFFC31FF1E62071200985A0F /* LaunchScreen.storyboard in Resources */,
 				CFFC31FC1E62071200985A0F /* Assets.xcassets in Resources */,
 				CFFC31FA1E62071200985A0F /* Main.storyboard in Resources */,
@@ -264,6 +274,8 @@
 			files = (
 				CFFC31F71E62071200985A0F /* ViewController.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
+				CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */,
+				CFFC32251E620EB200985A0F /* VaccineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +526,7 @@
 				CFFC321B1E62071200985A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFFC321C1E62071200985A0F /* Build configuration list for PBXNativeTarget "DropTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				CFFC321E1E62071200985A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFFC321F1E62071200985A0F /* Build configuration list for PBXNativeTarget "DropUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				CFFC32211E62071200985A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
