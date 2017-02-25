@@ -10,29 +10,46 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var table: UITableView!
+    var vaccines = K.Initial.Vaccines.forChildren
+    var sectionTitles = [String]()
+    var sectionVaccines = [[Vaccine]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.tag = 10
-        print(table.tag)
+        sectionTitles = vaccineTitlesOrderedAlphabetically(from: vaccines)
+        sectionVaccines = vaccinesGroupedByTitle(from: vaccines, andTitles: sectionTitles)
     }
+    
+    fileprivate func vaccineTitlesOrderedAlphabetically(from vaccines: [Vaccine]) -> [String] {
+        return vaccines
+            .map { $0.title }
+            .sorted { $0 < $1 }
+            .reduce([]) { $0.contains($1) ? $0 : $0 + [$1] }
+    }
+    
+    fileprivate func vaccinesGroupedByTitle(from vaccines: [Vaccine], andTitles titles: [String]) -> [[Vaccine]] {
+        return titles.map { (title) in
+            vaccines.filter { $0.title == title }
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return sectionTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("?")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "vaccine")
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "vaccine") as! VaccineTableViewCell? else {
+            print("Can't dequeue reusable cell")
+            exit(1)
+        }
+        cell.titleLabel.text = sectionTitles[indexPath.row]
+        cell.vaccines = sectionVaccines[indexPath.row]
+        return cell
     }
     
 }

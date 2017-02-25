@@ -11,16 +11,13 @@ import UIKit
 class VaccineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var vaccines = [Vaccine]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         collection.dataSource = self
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
@@ -28,7 +25,7 @@ class VaccineTableViewCell: UITableViewCell {
 extension VaccineTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return vaccines.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

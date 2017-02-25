@@ -17,6 +17,8 @@
 		CFFC32251E620EB200985A0F /* VaccineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */; };
 		CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */; };
 		CFFC32291E62156900985A0F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CFFC32281E62156900985A0F /* .gitignore */; };
+		CFFC322B1E6215B900985A0F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322A1E6215B900985A0F /* K.swift */; };
+		CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322C1E62418100985A0F /* Vaccine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineTableViewCell.swift; sourceTree = "<group>"; };
 		CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
 		CFFC32281E62156900985A0F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CFFC322A1E6215B900985A0F /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		CFFC322C1E62418100985A0F /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +108,15 @@
 		CFFC31F31E62071200985A0F /* Drop */ = {
 			isa = PBXGroup;
 			children = (
+				CFFC322E1E6241DE00985A0F /* Cells */,
+				CFFC322F1E6241F900985A0F /* Models */,
+				CFFC322A1E6215B900985A0F /* K.swift */,
 				CFFC31F41E62071200985A0F /* AppDelegate.swift */,
 				CFFC31F61E62071200985A0F /* ViewController.swift */,
 				CFFC31F81E62071200985A0F /* Main.storyboard */,
 				CFFC31FB1E62071200985A0F /* Assets.xcassets */,
 				CFFC31FD1E62071200985A0F /* LaunchScreen.storyboard */,
 				CFFC32001E62071200985A0F /* Info.plist */,
-				CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */,
-				CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */,
 			);
 			path = Drop;
 			sourceTree = "<group>";
@@ -132,6 +137,23 @@
 				CFFC32161E62071200985A0F /* Info.plist */,
 			);
 			path = DropUITests;
+			sourceTree = "<group>";
+		};
+		CFFC322E1E6241DE00985A0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */,
+				CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		CFFC322F1E6241F900985A0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFFC322C1E62418100985A0F /* Vaccine.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFC31F71E62071200985A0F /* ViewController.swift in Sources */,
+				CFFC322B1E6215B900985A0F /* K.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
+				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */,
 				CFFC32251E620EB200985A0F /* VaccineTableViewCell.swift in Sources */,
 			);
