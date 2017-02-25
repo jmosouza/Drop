@@ -11,18 +11,33 @@ import Foundation
 class Vaccine {
     
     var title: String
-    var estimateDate: Date
+    var dateEstimate: Date
+    var dateTaken: Date?
+    
+    var isTaken: Bool {
+        get {
+            return dateTaken != nil
+        }
+    }
     
     /** Default initializer */
-    init(title: String, estimateDate: Date) {
+    init(title: String, dateEstimate: Date) {
         self.title = title
-        self.estimateDate = estimateDate
+        self.dateEstimate = dateEstimate
     }
     
     /** Initialize by adding an age to a birth date. */
     convenience init(title: String, birth: Date, age: TimeInterval) {
         let date = birth.addingTimeInterval(age)
-        self.init(title: title, estimateDate: date)
+        self.init(title: title, dateEstimate: date)
+    }
+    
+    func markTaken(date: Date = Date()) {
+        self.dateTaken = date
+    }
+    
+    func markNotTaken() {
+        self.dateTaken = nil
     }
     
 }

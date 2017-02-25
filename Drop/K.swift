@@ -22,16 +22,16 @@ struct K {
             }
             
             static let forChildren: [Vaccine] = [
-                Vaccine(title: Agent.flu.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.flu.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.tetanus.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, estimateDate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, estimateDate: Date())
+                Vaccine(title: Agent.flu.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.flu.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.tetanus.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date()),
+                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date())
             ]
         
         }

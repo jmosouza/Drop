@@ -12,8 +12,35 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var takenButton: UIButton!
     @IBOutlet weak var date: UILabel!
-
+    
+    var vaccine: Vaccine! {
+        didSet {
+            toggleTakenButtonState(from: vaccine)
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     @IBAction func didTapTakenButton(_ sender: Any) {
-        print("vaccine marked as taken")
+        toggleVaccineTakenState(vaccine: vaccine!)
+        toggleTakenButtonState(from: vaccine!)
+    }
+    
+    func toggleVaccineTakenState(vaccine: Vaccine) {
+        if vaccine.isTaken {
+            vaccine.markNotTaken()
+            print("Vaccine \(vaccine.title) marked as NOT taken.")
+        } else {
+            vaccine.markTaken()
+            print("Vaccine \(vaccine.title) marked as taken.")
+        }
+    }
+    
+    func toggleTakenButtonState(from vaccine: Vaccine) {
+        takenButton.backgroundColor = vaccine.isTaken
+            ? UIColor.blue
+            : UIColor.gray
     }
 }
