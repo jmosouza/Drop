@@ -21,20 +21,29 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        // Toggle button when holding a bit
+        let longPressRecognizer =
+            UILongPressGestureRecognizer(
+                target: self,
+                action: #selector(handleLongPressGesture))
+        takenButton.addGestureRecognizer(longPressRecognizer)
     }
     
-    @IBAction func didTapTakenButton(_ sender: Any) {
-        toggleVaccineTakenState(vaccine: vaccine!)
-        toggleTakenButtonState(from: vaccine!)
+    func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state == .began {
+            toggleVaccineTakenState(vaccine: vaccine!)
+            toggleTakenButtonState(from: vaccine!)
+        }
     }
     
     func toggleVaccineTakenState(vaccine: Vaccine) {
         if vaccine.isTaken {
             vaccine.markNotTaken()
-            print("Vaccine \(vaccine.title) marked as NOT taken.")
+            print("\(vaccine.title) vaccine marked as NOT taken.")
         } else {
             vaccine.markTaken()
-            print("Vaccine \(vaccine.title) marked as taken.")
+            print("\(vaccine.title) vaccine marked as taken.")
         }
     }
     

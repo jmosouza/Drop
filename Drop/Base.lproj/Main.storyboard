@@ -59,13 +59,11 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W41-k4-PTM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <gestureRecognizers/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="80" id="SMZ-xS-d6Y"/>
                                                                             <constraint firstAttribute="width" constant="80" id="Yld-eb-4EI"/>
                                                                         </constraints>
-                                                                        <connections>
-                                                                            <action selector="didTapTakenButton:" destination="V2v-gS-6WC" eventType="touchUpInside" id="D5o-nn-7L4"/>
-                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jr-HE-MYO">
                                                                         <rect key="frame" x="0.0" y="88" width="80" height="16"/>
