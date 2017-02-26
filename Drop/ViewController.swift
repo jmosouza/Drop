@@ -51,8 +51,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "vaccine") as! VaccineTableViewCell? else {
-            print("Can't dequeue reusable cell")
-            exit(1)
+            fatalError("Can't dequeue reusable cell")
         }
         cell.titleLabel.text = sectionTitles[indexPath.row]
         cell.vaccines = sectionVaccines[indexPath.row]

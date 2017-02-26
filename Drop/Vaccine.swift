@@ -55,7 +55,7 @@ class Vaccine {
                     style: .full,
                     zero: .dropAll))
         } catch {
-            print(error)
+            log.error(error)
             return nil
         }
     }

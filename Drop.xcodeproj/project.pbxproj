@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6FD1B6C26E1DDC931D11B3D8 /* Pods_DropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051676D72EF7283B2AD4D8F /* Pods_DropUITests.framework */; };
-		CF2815D51E630C1200E2B7B8 /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = CF2815D41E630C1200E2B7B8 /* TODO.md */; };
 		CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */; };
 		CF2CA2BFF3259E016141DED3 /* Pods_Drop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E43291F12FFF1702DDFCED5 /* Pods_Drop.framework */; };
 		CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F41E62071200985A0F /* AppDelegate.swift */; };
@@ -23,7 +22,6 @@
 		CFFC32291E62156900985A0F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CFFC32281E62156900985A0F /* .gitignore */; };
 		CFFC322B1E6215B900985A0F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322A1E6215B900985A0F /* K.swift */; };
 		CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322C1E62418100985A0F /* Vaccine.swift */; };
-		CFFC32311E6251F400985A0F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32301E6251F400985A0F /* README.md */; };
 		F00D6E8CF1025609F006A61C /* Pods_DropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E0D4F1071E0013A99C54A0 /* Pods_DropTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +56,7 @@
 		CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineDetailViewController.swift; sourceTree = "<group>"; };
 		CFFC31F11E62071200985A0F /* Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFC31F41E62071200985A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFFC31F61E62071200985A0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFFC31F61E62071200985A0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CFFC31F91E62071200985A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFFC31FB1E62071200985A0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFFC31FE1E62071200985A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,10 +68,10 @@
 		CFFC32141E62071200985A0F /* DropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropUITests.swift; sourceTree = "<group>"; };
 		CFFC32161E62071200985A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFFC32241E620EB200985A0F /* VaccineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineTableViewCell.swift; sourceTree = "<group>"; };
-		CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFFC32261E6213A000985A0F /* VaccineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = VaccineCollectionViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CFFC32281E62156900985A0F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CFFC322A1E6215B900985A0F /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
-		CFFC322C1E62418100985A0F /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		CFFC322C1E62418100985A0F /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Vaccine.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CFFC32301E6251F400985A0F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -501,8 +499,6 @@
 				CFFC31F71E62071200985A0F /* ViewController.swift in Sources */,
 				CFFC322B1E6215B900985A0F /* K.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
-				CFFC32311E6251F400985A0F /* README.md in Sources */,
-				CF2815D51E630C1200E2B7B8 /* TODO.md in Sources */,
 				CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */,
 				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */,

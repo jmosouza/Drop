@@ -16,6 +16,7 @@ class VaccineDetailViewController: UIViewController {
         super.viewDidLoad()
         
         if vaccine == nil {
+            log.error("Vaccine is nil")
             dismiss(animated: true, completion: nil)
         }
     }
@@ -30,7 +31,7 @@ extension VaccineDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "card") else {
-            fatalError("can't find cell")
+            fatalError("Can't dequeue cell")
         }
         return cell
     }

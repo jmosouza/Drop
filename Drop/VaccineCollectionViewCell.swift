@@ -43,7 +43,6 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     
     func handleTapGesture(recognizer: UITapGestureRecognizer) {
         if recognizer.state == .ended {
-            print("Tapped on \(vaccine.title)")
             delegate?.didTap(vaccine: vaccine)
         }
     }
@@ -58,10 +57,8 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     func toggleVaccineTakenState(vaccine: Vaccine) {
         if vaccine.isTaken {
             vaccine.markNotTaken()
-            print("\(vaccine.title) vaccine marked as NOT taken.")
         } else {
             vaccine.markTaken()
-            print("\(vaccine.title) vaccine marked as taken.")
         }
     }
     

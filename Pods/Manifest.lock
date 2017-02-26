@@ -1,12 +1,17 @@
 PODS:
   - SwiftDate (4.0.11)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - SwiftDate (~> 4.0)
+  - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
   SwiftDate: a36d5ce7c86bed3ed92b583ccbf15045f374ac65
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 9f97c68b129073a0c4a3ee7075e24c2c3b7377f5
+PODFILE CHECKSUM: f10b436856673b2d4d47636f1350ca5384320a56
 
 COCOAPODS: 1.2.0.rc.1

@@ -7,6 +7,7 @@ target 'Drop' do
 
   # Pods for Drop
   pod 'SwiftDate', '~> 4.0'
+  pod 'XCGLogger', '~> 4.0.0'
 
   target 'DropTests' do
     inherit! :search_paths
