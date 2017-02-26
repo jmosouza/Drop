@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 struct K {
     
@@ -14,24 +15,25 @@ struct K {
         
         struct Vaccines {
             
+            // TODO: Get birth from profile
+            static let birth = Date()
+            
             fileprivate enum Agent: String {
-                case flu = "Flu"
-                case tetanus = "Tetanus"
-                case hepatitis = "Hepatitis"
-                case tuberculosis = "Tuberculosis"
+                case hepatitisB = "Hepatitis B"
+                case rotavirus = "Rotavirus"
+                case dtap = "DTaP"
             }
             
-            static let forChildren: [Vaccine] = [
-                Vaccine(title: Agent.flu.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.flu.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.tetanus.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.hepatitis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date()),
-                Vaccine(title: Agent.tuberculosis.rawValue, dateEstimate: Date())
+            static let usaBirthToFifteenMonths_2017_02: [Vaccine] = [
+                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 0.months.from(date: birth)!),
+                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 1.months.from(date: birth)!),
+                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 6.months.from(date: birth)!),
+                Vaccine(title: Agent.rotavirus.rawValue, dateEstimate: 2.months.from(date: birth)!),
+                Vaccine(title: Agent.rotavirus.rawValue, dateEstimate: 4.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 2.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 4.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 6.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 15.months.from(date: birth)!)
             ]
         
         }

@@ -11,10 +11,13 @@ import UIKit
 class VaccineCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var takenButton: UIButton!
-    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var vaccine: Vaccine! {
         didSet {
+            // TODO: Get birth from profile
+            let birth = K.Initial.Vaccines.birth
+            dateLabel.text = vaccine.readableIntervalTo(birth)
             toggleTakenButtonState(from: vaccine)
         }
     }
@@ -22,7 +25,7 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Toggle button when holding a bit
+        // Toggle button when holding for a little while
         let longPressRecognizer =
             UILongPressGestureRecognizer(
                 target: self,

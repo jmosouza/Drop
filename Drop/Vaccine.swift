@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 class Vaccine {
     
@@ -32,12 +33,31 @@ class Vaccine {
         self.init(title: title, dateEstimate: date)
     }
     
-    func markTaken(date: Date = Date()) {
-        self.dateTaken = date
+    func markTaken() {
+        self.dateTaken = dateEstimate
     }
     
     func markNotTaken() {
         self.dateTaken = nil
+    }
+    
+    func readableIntervalTo(_ date: Date) -> String? {
+        
+        let selfDate = dateTaken ?? dateEstimate
+        
+        do {
+            // Using SwiftDate's Time Components formatting.
+            // http://malcommac.github.io/SwiftDate/formatters.html#timecomponents
+            return try selfDate.timeComponents(
+                to: date,
+                options: ComponentsFormatterOptions(
+                    allowedUnits: [.month, .year],
+                    style: .full,
+                    zero: .dropAll))
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
 }

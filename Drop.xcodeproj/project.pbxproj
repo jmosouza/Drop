@@ -126,6 +126,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CF2815D61E63220700E2B7B8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CFFC322A1E6215B900985A0F /* K.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		CFFC31E81E62071200985A0F = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +164,7 @@
 			children = (
 				CFFC322E1E6241DE00985A0F /* Cells */,
 				CFFC322F1E6241F900985A0F /* Models */,
-				CFFC322A1E6215B900985A0F /* K.swift */,
+				CF2815D61E63220700E2B7B8 /* Constants */,
 				CFFC31F41E62071200985A0F /* AppDelegate.swift */,
 				CFFC31F61E62071200985A0F /* ViewController.swift */,
 				CFFC31F81E62071200985A0F /* Main.storyboard */,

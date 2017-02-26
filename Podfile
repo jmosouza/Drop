@@ -6,6 +6,7 @@ target 'Drop' do
   use_frameworks!
 
   # Pods for Drop
+  pod 'SwiftDate', '~> 4.0'
 
   target 'DropTests' do
     inherit! :search_paths

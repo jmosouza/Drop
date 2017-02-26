@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var vaccines = K.Initial.Vaccines.forChildren
+    var vaccines = K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
     var sectionTitles = [String]()
     var sectionVaccines = [[Vaccine]]()
     
