@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var sectionTitles = [String]()
     var sectionVaccines = [[Vaccine]]()
     
+    var selectedVaccine: Vaccine?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTitles = vaccineTitlesOrderedAlphabetically(from: vaccines)
@@ -33,6 +35,12 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? VaccineDetailViewController {
+            vc.vaccine = selectedVaccine
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -42,14 +50,29 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("?")
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "vaccine") as! VaccineTableViewCell? else {
             print("Can't dequeue reusable cell")
             exit(1)
         }
         cell.titleLabel.text = sectionTitles[indexPath.row]
         cell.vaccines = sectionVaccines[indexPath.row]
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+protocol VaccineDelegate {
+    
+    func didTap(vaccine: Vaccine)
+    
+}
+
+extension ViewController: VaccineDelegate {
+    
+    func didTap(vaccine: Vaccine) {
+        selectedVaccine = vaccine
+        performSegue(withIdentifier: "vaccineDetail", sender: nil)
     }
     
 }

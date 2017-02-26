@@ -10,8 +10,10 @@ import UIKit
 
 class VaccineCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var takenButton: UIButton!
+    @IBOutlet weak var vaccineToggle: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    var delegate: VaccineDelegate?
     
     var vaccine: Vaccine! {
         didSet {
@@ -25,12 +27,25 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // Open vaccine detail after tapping
+        let tapRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(handleTapGesture(recognizer:)))
+        
         // Toggle button when holding for a little while
-        let longPressRecognizer =
-            UILongPressGestureRecognizer(
-                target: self,
-                action: #selector(handleLongPressGesture))
-        takenButton.addGestureRecognizer(longPressRecognizer)
+        let longPressRecognizer = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(handleLongPressGesture))
+        
+        contentView.addGestureRecognizer(tapRecognizer)
+        contentView.addGestureRecognizer(longPressRecognizer)
+    }
+    
+    func handleTapGesture(recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .ended {
+            print("Tapped on \(vaccine.title)")
+            delegate?.didTap(vaccine: vaccine)
+        }
     }
     
     func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
@@ -51,7 +66,7 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     }
     
     func toggleTakenButtonState(from vaccine: Vaccine) {
-        takenButton.backgroundColor = vaccine.isTaken
+        vaccineToggle.backgroundColor = vaccine.isTaken
             ? UIColor.blue
             : UIColor.gray
     }
