@@ -19,6 +19,7 @@
 		CFFC32291E62156900985A0F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CFFC32281E62156900985A0F /* .gitignore */; };
 		CFFC322B1E6215B900985A0F /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322A1E6215B900985A0F /* K.swift */; };
 		CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC322C1E62418100985A0F /* Vaccine.swift */; };
+		CFFC32311E6251F400985A0F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CFFC32301E6251F400985A0F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		CFFC32281E62156900985A0F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CFFC322A1E6215B900985A0F /* K.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		CFFC322C1E62418100985A0F /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		CFFC32301E6251F400985A0F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		CFFC31E81E62071200985A0F = {
 			isa = PBXGroup;
 			children = (
+				CFFC32301E6251F400985A0F /* README.md */,
 				CFFC32281E62156900985A0F /* .gitignore */,
 				CFFC31F31E62071200985A0F /* Drop */,
 				CFFC32081E62071200985A0F /* DropTests */,
@@ -297,6 +300,7 @@
 				CFFC31F71E62071200985A0F /* ViewController.swift in Sources */,
 				CFFC322B1E6215B900985A0F /* K.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
+				CFFC32311E6251F400985A0F /* README.md in Sources */,
 				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */,
 				CFFC32251E620EB200985A0F /* VaccineTableViewCell.swift in Sources */,
