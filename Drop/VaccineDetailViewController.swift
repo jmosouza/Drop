@@ -10,10 +10,18 @@ import UIKit
 
 class VaccineDetailViewController: UIViewController {
     
+    @IBOutlet weak var table: UITableView!
+    
     var vaccine: Vaccine?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        table.contentInset = UIEdgeInsets(
+            top: 200,
+            left: 0,
+            bottom: 0,
+            right: 0)
         
         if vaccine == nil {
             log.error("Vaccine is nil")
@@ -26,12 +34,13 @@ class VaccineDetailViewController: UIViewController {
 extension VaccineDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "card") else {
-            fatalError("Can't dequeue cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "keyValue") else {
+            log.severe("Can't dequeue cell")
+            fatalError()
         }
         return cell
     }

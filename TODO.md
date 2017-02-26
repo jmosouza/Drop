@@ -9,3 +9,4 @@
 - [ ] Create a new profile
 - [ ] Create a new vaccine
 - [ ] Force touch to toggle vaccine
+- [ ] Strong typed resources with R.swift
