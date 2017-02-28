@@ -38,8 +38,9 @@ extension VaccineDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "keyValue") else {
-            log.severe("Can't dequeue cell")
+        let identifier = R.reuseIdentifier.keyValue.identifier
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) else {
+            log.severe("Can't dequeue cell with identifier \(identifier)")
             fatalError()
         }
         return cell

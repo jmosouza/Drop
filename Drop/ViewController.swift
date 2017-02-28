@@ -50,8 +50,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "vaccine") as! VaccineTableViewCell? else {
-            log.severe("Can't dequeue reusable cell")
+        let identifier = R.reuseIdentifier.vaccineRow.identifier
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineTableViewCell? else {
+            log.severe("Can't dequeue reusable cell with identifier \(identifier)")
             fatalError()
         }
         cell.titleLabel.text = sectionTitles[indexPath.row]
@@ -72,7 +73,8 @@ extension ViewController: VaccineDelegate {
     
     func didTap(vaccine: Vaccine) {
         selectedVaccine = vaccine
-        performSegue(withIdentifier: "vaccineDetail", sender: nil)
+        let segue = R.segue.viewController.vaccineDetail
+        performSegue(withIdentifier: segue, sender: nil)
     }
     
 }

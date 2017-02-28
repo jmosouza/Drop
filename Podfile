@@ -6,6 +6,7 @@ target 'Drop' do
   use_frameworks!
 
   # Pods for Drop
+  pod 'R.swift'
   pod 'SwiftDate', '~> 4.0'
   pod 'XCGLogger', '~> 4.0.0'
 

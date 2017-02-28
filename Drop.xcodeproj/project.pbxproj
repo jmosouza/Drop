@@ -10,6 +10,7 @@
 		6FD1B6C26E1DDC931D11B3D8 /* Pods_DropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051676D72EF7283B2AD4D8F /* Pods_DropUITests.framework */; };
 		CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */; };
 		CF2CA2BFF3259E016141DED3 /* Pods_Drop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E43291F12FFF1702DDFCED5 /* Pods_Drop.framework */; };
+		CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF439CA51E661DB300D6BB9F /* R.generated.swift */; };
 		CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F41E62071200985A0F /* AppDelegate.swift */; };
 		CFFC31F71E62071200985A0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F61E62071200985A0F /* ViewController.swift */; };
 		CFFC31FA1E62071200985A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFC31F81E62071200985A0F /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		AE02C18D6C1A24F440A8233F /* Pods-DropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DropTests/Pods-DropTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2815D41E630C1200E2B7B8 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineDetailViewController.swift; sourceTree = "<group>"; };
+		CF439CA51E661DB300D6BB9F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		CFFC31F11E62071200985A0F /* Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFC31F41E62071200985A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFC31F61E62071200985A0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -165,6 +167,7 @@
 				CFFC322E1E6241DE00985A0F /* Cells */,
 				CFFC322F1E6241F900985A0F /* Models */,
 				CF2815D61E63220700E2B7B8 /* Constants */,
+				CF439CA51E661DB300D6BB9F /* R.generated.swift */,
 				CFFC31F41E62071200985A0F /* AppDelegate.swift */,
 				CFFC31F61E62071200985A0F /* ViewController.swift */,
 				CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */,
@@ -219,6 +222,7 @@
 			buildConfigurationList = CFFC32191E62071200985A0F /* Build configuration list for PBXNativeTarget "Drop" */;
 			buildPhases = (
 				AA3C2A6BE5648B09EF62FF9F /* [CP] Check Pods Manifest.lock */,
+				CF439CA41E661C3D00D6BB9F /* ShellScript */,
 				CFFC31ED1E62071200985A0F /* Sources */,
 				CFFC31EE1E62071200985A0F /* Frameworks */,
 				CFFC31EF1E62071200985A0F /* Resources */,
@@ -474,6 +478,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DropUITests/Pods-DropUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CF439CA41E661C3D00D6BB9F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
 		D2F0196A841B7AF2FBC86888 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,6 +516,7 @@
 				CFFC31F71E62071200985A0F /* ViewController.swift in Sources */,
 				CFFC322B1E6215B900985A0F /* K.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
+				CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */,
 				CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */,
 				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineCollectionViewCell.swift in Sources */,

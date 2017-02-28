@@ -1,17 +1,23 @@
 PODS:
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
   - SwiftDate (4.0.11)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - R.swift
   - SwiftDate (~> 4.0)
   - XCGLogger (~> 4.0.0)
 
 SPEC CHECKSUMS:
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   SwiftDate: a36d5ce7c86bed3ed92b583ccbf15045f374ac65
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: f10b436856673b2d4d47636f1350ca5384320a56
+PODFILE CHECKSUM: 8cec182241d919beb1200369873a0d266c43082b
 
 COCOAPODS: 1.2.0.rc.1
