@@ -64,16 +64,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
-    /// This struct is generated for `ViewController`, and contains static references to 1 segues.
-    struct viewController {
+    /// This struct is generated for `VaccineGridViewController`, and contains static references to 1 segues.
+    struct vaccineGridViewController {
       /// Segue identifier `vaccineDetail`.
-      static let vaccineDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ViewController, VaccineDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "vaccineDetail")
+      static let vaccineDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, VaccineGridViewController, VaccineDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "vaccineDetail")
       
       /// Optionally returns a typed version of segue `vaccineDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func vaccineDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ViewController, VaccineDetailViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.viewController.vaccineDetail, segue: segue)
+      static func vaccineDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, VaccineGridViewController, VaccineDetailViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.vaccineGridViewController.vaccineDetail, segue: segue)
       }
       
       fileprivate init() {}
@@ -136,7 +136,7 @@ struct _R {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = ViewController
+      typealias InitialController = VaccineGridViewController
       
       let bundle = R.hostingBundle
       let name = "Main"

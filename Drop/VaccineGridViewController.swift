@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VaccineGridViewController: UIViewController {
 
     var vaccines = K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
     var sectionTitles = [String]()
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension VaccineGridViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sectionTitles.count
@@ -66,7 +66,7 @@ protocol VaccineDelegate {
     
 }
 
-extension ViewController: VaccineDelegate {
+extension VaccineGridViewController: VaccineDelegate {
     
     func didTap(vaccine: Vaccine) {
         // TODO: Show vaccine details
