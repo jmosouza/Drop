@@ -30,7 +30,7 @@ extension VaccineTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = R.reuseIdentifier.keyValue.identifier
+        let identifier = R.reuseIdentifier.vaccineCell.identifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! VaccineCollectionViewCell
         cell.vaccine = vaccines[indexPath.row]
         cell.delegate = delegate
