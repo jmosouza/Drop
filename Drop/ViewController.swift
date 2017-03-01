@@ -51,10 +51,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = R.reuseIdentifier.vaccineRow.identifier
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineTableViewCell? else {
-            log.severe("Can't dequeue reusable cell with identifier \(identifier)")
-            fatalError()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineTableViewCell
         cell.titleLabel.text = sectionTitles[indexPath.row]
         cell.vaccines = sectionVaccines[indexPath.row]
         cell.delegate = self
