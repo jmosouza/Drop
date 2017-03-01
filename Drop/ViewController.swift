@@ -69,9 +69,10 @@ protocol VaccineDelegate {
 extension ViewController: VaccineDelegate {
     
     func didTap(vaccine: Vaccine) {
-        selectedVaccine = vaccine
-        let segue = R.segue.viewController.vaccineDetail
-        performSegue(withIdentifier: segue, sender: nil)
+        // TODO: Show vaccine details
+        // selectedVaccine = vaccine
+        // let segue = R.segue.viewController.vaccineDetail
+        // performSegue(withIdentifier: segue, sender: nil)
     }
     
 }
