@@ -65,9 +65,9 @@ class VaccineGridCell: UICollectionViewCell {
     
     fileprivate func refreshContent() {
         toggleTakenButtonState(from: vaccine)
-        dateLabel.text = vaccine.readableIntervalTo(birth)
+        dateLabel.text = vaccine.readableAge(forBirthDate: birth)
         vaccineToggle.accessibilityHint = accessibilityHintFor(vaccine: vaccine)
-        vaccineToggle.accessibilityLabel = vaccine.accessibilityLabelWithAgeFrom(birth)
+        vaccineToggle.accessibilityLabel = vaccine.accessibilityLabel(forBirthDate: birth)
     }
     
     fileprivate func toggleVaccineTakenState(vaccine: Vaccine) {

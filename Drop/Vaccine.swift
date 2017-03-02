@@ -41,15 +41,22 @@ class Vaccine {
         self.dateTaken = nil
     }
     
-    func readableIntervalTo(_ date: Date) -> String? {
-        
-        let selfDate = dateTaken ?? dateEstimate
-        
+    /**
+     Returns a text representing the interval since the birth date.
+     This function uses [SwiftDate Time Components](http://malcommac.github.io/SwiftDate/formatters.html#timecomponents).
+     Example results:
+     
+     - 1 year, 3 months
+     - 3 months
+     - 0 month
+     
+     - returns: A text representing the interval since the birth date.
+     */
+    func readableAge(forBirthDate birthDate: Date) -> String? {
         do {
-            // Using SwiftDate's Time Components formatting.
-            // http://malcommac.github.io/SwiftDate/formatters.html#timecomponents
-            return try selfDate.timeComponents(
-                to: date,
+            let vaccinationDate = dateTaken ?? dateEstimate
+            return try vaccinationDate.timeComponents(
+                to: birthDate,
                 options: ComponentsFormatterOptions(
                     allowedUnits: [.month, .year],
                     style: .full,
@@ -60,8 +67,17 @@ class Vaccine {
         }
     }
     
-    func accessibilityLabelWithAgeFrom(_ date: Date) -> String? {
-        guard let age = readableIntervalTo(date) else {
+    /**
+     Returns a text description designed for screen readers.
+     Example results:
+     
+     - Rotavirus, 4 months, Vaccinated
+     - DTaP, 1 year, 3 months, Not vaccinated
+     
+     - returns: A text description designed for screen readers.
+     */
+    func accessibilityLabel(forBirthDate birthDate: Date) -> String? {
+        guard let age = readableAge(forBirthDate: birthDate) else {
             return nil
         }
         let taken = isTaken
