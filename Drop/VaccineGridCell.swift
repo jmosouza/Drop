@@ -14,7 +14,6 @@ class VaccineGridCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     var vaccine: Vaccine!
-    var delegate: VaccineDelegate?
     let birth = K.Initial.Vaccines.birth
     
     // MARK: - Lifecycle
@@ -22,17 +21,10 @@ class VaccineGridCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Open vaccine detail after tapping
-        let tapRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(handleTapGesture(recognizer:)))
-        
         // Toggle button when holding for a little while
         let longPressRecognizer = UILongPressGestureRecognizer(
             target: self,
             action: #selector(handleLongPressGesture))
-        
-        contentView.addGestureRecognizer(tapRecognizer)
         contentView.addGestureRecognizer(longPressRecognizer)
     }
     
@@ -42,12 +34,6 @@ class VaccineGridCell: UICollectionViewCell {
     }
     
     // MARK: - Gestures
-    
-    func handleTapGesture(recognizer: UITapGestureRecognizer) {
-        if recognizer.state == .ended {
-            delegate?.didTap(vaccine: vaccine)
-        }
-    }
     
     func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {

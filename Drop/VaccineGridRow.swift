@@ -14,7 +14,6 @@ class VaccineGridRow: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     var vaccines = [Vaccine]()
-    var delegate: VaccineDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +32,6 @@ extension VaccineGridRow: UICollectionViewDataSource {
         let identifier = R.reuseIdentifier.vaccineCell.identifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! VaccineGridCell
         cell.vaccine = vaccines[indexPath.row]
-        cell.delegate = delegate
         return cell
     }
     

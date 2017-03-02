@@ -50,10 +50,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `keyValue`.
-    static let keyValue: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "keyValue")
     /// Reuse identifier `vaccineCell`.
     static let vaccineCell: Rswift.ReuseIdentifier<VaccineGridCell> = Rswift.ReuseIdentifier(identifier: "vaccineCell")
     /// Reuse identifier `vaccineRow`.
@@ -62,23 +60,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
   struct segue {
-    /// This struct is generated for `VaccineGridViewController`, and contains static references to 1 segues.
-    struct vaccineGridViewController {
-      /// Segue identifier `vaccineDetail`.
-      static let vaccineDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, VaccineGridViewController, VaccineDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "vaccineDetail")
-      
-      /// Optionally returns a typed version of segue `vaccineDetail`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func vaccineDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, VaccineGridViewController, VaccineDetailViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.vaccineGridViewController.vaccineDetail, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   

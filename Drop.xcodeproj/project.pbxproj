@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6FD1B6C26E1DDC931D11B3D8 /* Pods_DropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051676D72EF7283B2AD4D8F /* Pods_DropUITests.framework */; };
-		CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */; };
 		CF2CA2BFF3259E016141DED3 /* Pods_Drop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E43291F12FFF1702DDFCED5 /* Pods_Drop.framework */; };
 		CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF439CA51E661DB300D6BB9F /* R.generated.swift */; };
 		CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F41E62071200985A0F /* AppDelegate.swift */; };
@@ -54,7 +53,6 @@
 		AB57E2B54E4A269B4D065672 /* Pods-DropUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropUITests/Pods-DropUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AE02C18D6C1A24F440A8233F /* Pods-DropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DropTests/Pods-DropTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2815D41E630C1200E2B7B8 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
-		CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineDetailViewController.swift; sourceTree = "<group>"; };
 		CF439CA51E661DB300D6BB9F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = R.generated.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CFFC31F11E62071200985A0F /* Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFC31F41E62071200985A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,14 +134,6 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
-		CFB976521E68C3F900D1E788 /* VaccineDetail */ = {
-			isa = PBXGroup;
-			children = (
-				CF2815D81E6349EB00E2B7B8 /* VaccineDetailViewController.swift */,
-			);
-			name = VaccineDetail;
-			sourceTree = "<group>";
-		};
 		CFFC31E81E62071200985A0F = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				CFFC322E1E6241DE00985A0F /* VaccineGrid */,
-				CFB976521E68C3F900D1E788 /* VaccineDetail */,
 				CFFC322F1E6241F900985A0F /* Models */,
 				CF2815D61E63220700E2B7B8 /* Constants */,
 				CF439CA51E661DB300D6BB9F /* R.generated.swift */,
@@ -525,7 +514,6 @@
 				CFFC322B1E6215B900985A0F /* K.swift in Sources */,
 				CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */,
 				CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */,
-				CF2815D91E6349EB00E2B7B8 /* VaccineDetailViewController.swift in Sources */,
 				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineGridCell.swift in Sources */,
 				CFFC32251E620EB200985A0F /* VaccineGridRow.swift in Sources */,

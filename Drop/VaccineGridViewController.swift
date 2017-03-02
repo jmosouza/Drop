@@ -35,12 +35,6 @@ class VaccineGridViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? VaccineDetailViewController {
-            vc.vaccine = selectedVaccine
-        }
-    }
-    
 }
 
 extension VaccineGridViewController: UITableViewDataSource {
@@ -54,25 +48,7 @@ extension VaccineGridViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineGridRow
         cell.titleLabel.text = sectionTitles[indexPath.row]
         cell.vaccines = sectionVaccines[indexPath.row]
-        cell.delegate = self
         return cell
-    }
-    
-}
-
-protocol VaccineDelegate {
-    
-    func didTap(vaccine: Vaccine)
-    
-}
-
-extension VaccineGridViewController: VaccineDelegate {
-    
-    func didTap(vaccine: Vaccine) {
-        // TODO: Show vaccine details
-        // selectedVaccine = vaccine
-        // let segue = R.segue.viewController.vaccineDetail
-        // performSegue(withIdentifier: segue, sender: nil)
     }
     
 }
