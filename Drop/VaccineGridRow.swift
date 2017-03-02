@@ -1,5 +1,5 @@
 //
-//  VaccineTableViewCell.swift
+//  VaccineGridRow.swift
 //  Drop
 //
 //  Created by João Marcelo on 25/02/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VaccineTableViewCell: UITableViewCell {
+class VaccineGridRow: UITableViewCell {
 
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -23,7 +23,7 @@ class VaccineTableViewCell: UITableViewCell {
 
 }
 
-extension VaccineTableViewCell: UICollectionViewDataSource {
+extension VaccineGridRow: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vaccines.count
@@ -31,7 +31,7 @@ extension VaccineTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = R.reuseIdentifier.vaccineCell.identifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! VaccineCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! VaccineGridCell
         cell.vaccine = vaccines[indexPath.row]
         cell.delegate = delegate
         return cell

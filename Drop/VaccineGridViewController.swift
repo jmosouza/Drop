@@ -51,7 +51,7 @@ extension VaccineGridViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = R.reuseIdentifier.vaccineRow.identifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! VaccineGridRow
         cell.titleLabel.text = sectionTitles[indexPath.row]
         cell.vaccines = sectionVaccines[indexPath.row]
         cell.delegate = self

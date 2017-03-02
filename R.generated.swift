@@ -55,9 +55,9 @@ struct R: Rswift.Validatable {
     /// Reuse identifier `keyValue`.
     static let keyValue: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "keyValue")
     /// Reuse identifier `vaccineCell`.
-    static let vaccineCell: Rswift.ReuseIdentifier<VaccineCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "vaccineCell")
+    static let vaccineCell: Rswift.ReuseIdentifier<VaccineGridCell> = Rswift.ReuseIdentifier(identifier: "vaccineCell")
     /// Reuse identifier `vaccineRow`.
-    static let vaccineRow: Rswift.ReuseIdentifier<VaccineTableViewCell> = Rswift.ReuseIdentifier(identifier: "vaccineRow")
+    static let vaccineRow: Rswift.ReuseIdentifier<VaccineGridRow> = Rswift.ReuseIdentifier(identifier: "vaccineRow")
     
     fileprivate init() {}
   }

@@ -1,5 +1,5 @@
 //
-//  VaccineCollectionViewCell.swift
+//  VaccineGridCell.swift
 //  Drop
 //
 //  Created by João Marcelo on 25/02/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VaccineCollectionViewCell: UICollectionViewCell {
+class VaccineGridCell: UICollectionViewCell {
     
     @IBOutlet weak var vaccineToggle: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
