@@ -60,4 +60,15 @@ class Vaccine {
         }
     }
     
+    func accessibilityLabelWithAgeFrom(_ date: Date) -> String? {
+        guard let age = readableIntervalTo(date) else {
+            return nil
+        }
+        let taken = isTaken
+            ? NSLocalizedString("Vaccinated", comment: "Indicates that the vaccine is taken.")
+            : NSLocalizedString("Not vaccinated", comment: "Indicates that the vaccine is not taken.")
+        let label = [title, age, taken].joined(separator: ", ")
+        return label
+    }
+    
 }

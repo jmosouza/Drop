@@ -11,3 +11,4 @@
 - [ ] Force touch to toggle vaccine
 - [ ] Strong typed resources with R.swift
 - [ ] Review API
+- [ ] Reactive bindings

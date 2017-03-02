@@ -13,16 +13,11 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var vaccineToggle: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var vaccine: Vaccine!
     var delegate: VaccineDelegate?
+    let birth = K.Initial.Vaccines.birth
     
-    var vaccine: Vaccine! {
-        didSet {
-            // TODO: Get birth from profile
-            let birth = K.Initial.Vaccines.birth
-            dateLabel.text = vaccine.readableIntervalTo(birth)
-            toggleTakenButtonState(from: vaccine)
-        }
-    }
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +36,13 @@ class VaccineCollectionViewCell: UICollectionViewCell {
         contentView.addGestureRecognizer(longPressRecognizer)
     }
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        refreshContent()
+    }
+    
+    // MARK: - Gestures
+    
     func handleTapGesture(recognizer: UITapGestureRecognizer) {
         if recognizer.state == .ended {
             delegate?.didTap(vaccine: vaccine)
@@ -50,11 +52,25 @@ class VaccineCollectionViewCell: UICollectionViewCell {
     func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
             toggleVaccineTakenState(vaccine: vaccine!)
-            toggleTakenButtonState(from: vaccine!)
+            refreshContent()
+            
+            // Announce vaccine state out load.
+            UIAccessibilityPostNotification(
+                UIAccessibilityAnnouncementNotification,
+                accessibilityAnnouncementFor(vaccine: vaccine))
         }
     }
     
-    func toggleVaccineTakenState(vaccine: Vaccine) {
+    // MARK: - Misc
+    
+    fileprivate func refreshContent() {
+        toggleTakenButtonState(from: vaccine)
+        dateLabel.text = vaccine.readableIntervalTo(birth)
+        vaccineToggle.accessibilityHint = accessibilityHintFor(vaccine: vaccine)
+        vaccineToggle.accessibilityLabel = vaccine.accessibilityLabelWithAgeFrom(birth)
+    }
+    
+    fileprivate func toggleVaccineTakenState(vaccine: Vaccine) {
         if vaccine.isTaken {
             vaccine.markNotTaken()
         } else {
@@ -62,9 +78,29 @@ class VaccineCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func toggleTakenButtonState(from vaccine: Vaccine) {
+    fileprivate func toggleTakenButtonState(from vaccine: Vaccine) {
         vaccineToggle.backgroundColor = vaccine.isTaken
             ? UIColor.blue
             : UIColor.gray
+    }
+    
+    fileprivate func accessibilityHintFor(vaccine: Vaccine) -> String {
+        return vaccine.isTaken
+            ? NSLocalizedString(
+                "Keep pressed to mark as not vaccinated",
+                comment: "Accessibility hint for the vaccination buttons")
+            : NSLocalizedString(
+                "Keep pressed to mark as vaccinated",
+                comment: "Accessibility hint for the vaccination buttons")
+    }
+    
+    fileprivate func accessibilityAnnouncementFor(vaccine: Vaccine) -> String {
+        return vaccine.isTaken
+            ? NSLocalizedString(
+                "Vaccinated",
+                comment: "Indicates that the vaccine is taken")
+            : NSLocalizedString(
+                "Not vaccinated",
+                comment: "Indicates that the vaccine is not taken")
     }
 }
