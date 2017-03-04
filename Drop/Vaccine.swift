@@ -12,33 +12,41 @@ import SwiftDate
 class Vaccine {
     
     var title: String
-    var dateEstimate: Date
-    var dateTaken: Date?
+    var estimatedDate: Date
+    var recordedDate: Date?
+    var managedObject: VaccineMO?
     
     var isTaken: Bool {
         get {
-            return dateTaken != nil
+            return recordedDate != nil
         }
     }
     
     /** Default initializer */
-    init(title: String, dateEstimate: Date) {
+    init(title: String, estimatedDate: Date) {
         self.title = title
-        self.dateEstimate = dateEstimate
+        self.estimatedDate = estimatedDate
     }
     
     /** Initialize by adding an age to a birth date. */
     convenience init(title: String, birth: Date, age: TimeInterval) {
         let date = birth.addingTimeInterval(age)
-        self.init(title: title, dateEstimate: date)
+        self.init(title: title, estimatedDate: date)
+    }
+    
+    convenience init(managedObject: VaccineMO) {
+        self.init(
+            title: managedObject.title!,
+            estimatedDate: managedObject.estimatedDate! as Date)
+        self.managedObject = managedObject
     }
     
     func markTaken() {
-        self.dateTaken = dateEstimate
+        self.recordedDate = estimatedDate
     }
     
     func markNotTaken() {
-        self.dateTaken = nil
+        self.recordedDate = nil
     }
     
     /**
@@ -54,7 +62,7 @@ class Vaccine {
      */
     func readableAge(forBirthDate birthDate: Date) -> String? {
         do {
-            let vaccinationDate = dateTaken ?? dateEstimate
+            let vaccinationDate = recordedDate ?? estimatedDate
             return try vaccinationDate.timeComponents(
                 to: birthDate,
                 options: ComponentsFormatterOptions(
@@ -88,3 +96,9 @@ class Vaccine {
     }
     
 }
+
+//extension VaccineMO {
+//    
+//    @NSManaged var name: String?
+//    
+//}

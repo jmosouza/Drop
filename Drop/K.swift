@@ -11,6 +11,12 @@ import SwiftDate
 
 struct K {
     
+    struct Flag {
+        
+        static let isNthLaunch = "is_nth_launch"
+        
+    }
+    
     struct Initial {
         
         struct Vaccines {
@@ -25,15 +31,15 @@ struct K {
             }
             
             static let usaBirthToFifteenMonths_2017_02: [Vaccine] = [
-                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 0.months.from(date: birth)!),
-                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 1.months.from(date: birth)!),
-                Vaccine(title: Agent.hepatitisB.rawValue, dateEstimate: 6.months.from(date: birth)!),
-                Vaccine(title: Agent.rotavirus.rawValue, dateEstimate: 2.months.from(date: birth)!),
-                Vaccine(title: Agent.rotavirus.rawValue, dateEstimate: 4.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 2.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 4.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 6.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, dateEstimate: 15.months.from(date: birth)!)
+                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 0.months.from(date: birth)!),
+                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 1.months.from(date: birth)!),
+                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 6.months.from(date: birth)!),
+                Vaccine(title: Agent.rotavirus.rawValue, estimatedDate: 2.months.from(date: birth)!),
+                Vaccine(title: Agent.rotavirus.rawValue, estimatedDate: 4.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 2.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 4.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 6.months.from(date: birth)!),
+                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 15.months.from(date: birth)!)
             ]
         
         }

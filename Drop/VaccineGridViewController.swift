@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class VaccineGridViewController: UIViewController {
 
-    var vaccines = K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
+    var vaccines = [Vaccine]()//K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
     var sectionTitles = [String]()
     var sectionVaccines = [[Vaccine]]()
     
@@ -18,6 +19,18 @@ class VaccineGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fetch from local store
+        do {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = VaccineMO.fetchRequest() as NSFetchRequest<VaccineMO>
+            let results = try context.fetch(request)
+            vaccines = results.map { Vaccine(managedObject: $0) }
+        } catch {
+            log.severe(error)
+        }
+        
         sectionTitles = vaccineTitlesOrderedAlphabetically(from: vaccines)
         sectionVaccines = vaccinesGroupedByTitle(from: vaccines, andTitles: sectionTitles)
     }

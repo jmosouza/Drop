@@ -10,6 +10,7 @@
 		6FD1B6C26E1DDC931D11B3D8 /* Pods_DropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051676D72EF7283B2AD4D8F /* Pods_DropUITests.framework */; };
 		CF2CA2BFF3259E016141DED3 /* Pods_Drop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E43291F12FFF1702DDFCED5 /* Pods_Drop.framework */; };
 		CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF439CA51E661DB300D6BB9F /* R.generated.swift */; };
+		CFB976551E68D54300D1E788 /* Drop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFB976531E68D54300D1E788 /* Drop.xcdatamodeld */; };
 		CFFC31F51E62071200985A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F41E62071200985A0F /* AppDelegate.swift */; };
 		CFFC31F71E62071200985A0F /* VaccineGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFC31F61E62071200985A0F /* VaccineGridViewController.swift */; };
 		CFFC31FA1E62071200985A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFC31F81E62071200985A0F /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		AE02C18D6C1A24F440A8233F /* Pods-DropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DropTests/Pods-DropTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2815D41E630C1200E2B7B8 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		CF439CA51E661DB300D6BB9F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = R.generated.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		CFB976541E68D54300D1E788 /* Drop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Drop.xcdatamodel; sourceTree = "<group>"; };
 		CFFC31F11E62071200985A0F /* Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFC31F41E62071200985A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFC31F61E62071200985A0F /* VaccineGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = VaccineGridViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -129,6 +131,7 @@
 		CF2815D61E63220700E2B7B8 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				CF439CA51E661DB300D6BB9F /* R.generated.swift */,
 				CFFC322A1E6215B900985A0F /* K.swift */,
 			);
 			name = Constants;
@@ -165,11 +168,11 @@
 				CFFC322E1E6241DE00985A0F /* VaccineGrid */,
 				CFFC322F1E6241F900985A0F /* Models */,
 				CF2815D61E63220700E2B7B8 /* Constants */,
-				CF439CA51E661DB300D6BB9F /* R.generated.swift */,
 				CFFC31F41E62071200985A0F /* AppDelegate.swift */,
 				CFFC31FB1E62071200985A0F /* Assets.xcassets */,
 				CFFC31FD1E62071200985A0F /* LaunchScreen.storyboard */,
 				CFFC32001E62071200985A0F /* Info.plist */,
+				CFB976531E68D54300D1E788 /* Drop.xcdatamodeld */,
 			);
 			path = Drop;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				CF439CA61E661DB300D6BB9F /* R.generated.swift in Sources */,
 				CFFC322D1E62418100985A0F /* Vaccine.swift in Sources */,
 				CFFC32271E6213A000985A0F /* VaccineGridCell.swift in Sources */,
+				CFB976551E68D54300D1E788 /* Drop.xcdatamodeld in Sources */,
 				CFFC32251E620EB200985A0F /* VaccineGridRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +798,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CFB976531E68D54300D1E788 /* Drop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CFB976541E68D54300D1E788 /* Drop.xcdatamodel */,
+			);
+			currentVersion = CFB976541E68D54300D1E788 /* Drop.xcdatamodel */;
+			path = Drop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFFC31E91E62071200985A0F /* Project object */;
 }

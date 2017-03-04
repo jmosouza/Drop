@@ -12,3 +12,4 @@
 - [ ] Strong typed resources with R.swift
 - [ ] Review API
 - [ ] Reactive bindings
+- [ ] Drag vaccine from one section to another
