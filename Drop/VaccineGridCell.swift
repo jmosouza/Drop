@@ -37,7 +37,8 @@ class VaccineGridCell: UICollectionViewCell {
     
     func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
-            toggleVaccineTakenState(vaccine: vaccine!)
+            vaccine.toggleState()
+            vaccine.save()
             refreshContent()
             
             // Announce vaccine state out load.
@@ -54,14 +55,6 @@ class VaccineGridCell: UICollectionViewCell {
         dateLabel.text = vaccine.readableAge(forBirthDate: birth)
         vaccineToggle.accessibilityHint = accessibilityHintFor(vaccine: vaccine)
         vaccineToggle.accessibilityLabel = vaccine.accessibilityLabel(forBirthDate: birth)
-    }
-    
-    fileprivate func toggleVaccineTakenState(vaccine: Vaccine) {
-        if vaccine.isTaken {
-            vaccine.markNotTaken()
-        } else {
-            vaccine.markTaken()
-        }
     }
     
     fileprivate func toggleTakenButtonState(from vaccine: Vaccine) {

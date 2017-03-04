@@ -11,17 +11,15 @@ import CoreData
 
 class VaccineGridViewController: UIViewController {
 
-    var vaccines = [Vaccine]()//K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
+    var vaccines = [Vaccine]()
     var sectionTitles = [String]()
     var sectionVaccines = [[Vaccine]]()
-    
-    var selectedVaccine: Vaccine?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fetch from local store
         do {
+            // Fetch from local store
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = VaccineMO.fetchRequest() as NSFetchRequest<VaccineMO>

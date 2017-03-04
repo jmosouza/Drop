@@ -22,9 +22,12 @@ class Vaccine {
         }
     }
     
+    // MARK - Init
+    
     /** Default initializer */
-    init(title: String, estimatedDate: Date) {
+    init(title: String, recordedDate: Date? = nil, estimatedDate: Date) {
         self.title = title
+        self.recordedDate = recordedDate
         self.estimatedDate = estimatedDate
     }
     
@@ -34,19 +37,43 @@ class Vaccine {
         self.init(title: title, estimatedDate: date)
     }
     
+    /** Initialize from a managed object. */
     convenience init(managedObject: VaccineMO) {
         self.init(
             title: managedObject.title!,
+            recordedDate: managedObject.recordedDate as Date?,
             estimatedDate: managedObject.estimatedDate! as Date)
         self.managedObject = managedObject
     }
     
-    func markTaken() {
-        self.recordedDate = estimatedDate
+    // MARK - Misc
+    
+    func save() {
+        guard managedObject != nil else {
+            log.debug("Vaccine has no managed object")
+            return
+        }
+        managedObject!.title = title
+        managedObject!.recordedDate = recordedDate as NSDate?
+        managedObject!.estimatedDate = estimatedDate as NSDate?
+        do {
+            try managedObject!.managedObjectContext?.save()
+            log.debug("Vaccine saved managed object")
+        }
+        catch {
+            log.debug("Vaccine can't save managed object")
+            log.error(error)
+        }
     }
     
-    func markNotTaken() {
-        self.recordedDate = nil
+    /** 
+     Set the value of recordedDate. If currently nil, set to estimatedDate. If currently has a value, set to nil.
+     */
+    func toggleState() {
+        recordedDate = recordedDate == nil
+            ? estimatedDate
+            : nil
+        save()
     }
     
     /**
@@ -96,9 +123,3 @@ class Vaccine {
     }
     
 }
-
-//extension VaccineMO {
-//    
-//    @NSManaged var name: String?
-//    
-//}
