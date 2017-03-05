@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class VaccineGridViewController: UIViewController {
+    
+    let vaccineManager: VaccineManager = .shared
 
     var vaccines = [Vaccine]()
     var sectionTitles = [String]()
@@ -18,15 +20,9 @@ class VaccineGridViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            // Fetch from local store
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = VaccineMO.fetchRequest() as NSFetchRequest<VaccineMO>
-            let results = try context.fetch(request)
-            vaccines = results.map { Vaccine(managedObject: $0) }
-        } catch {
-            log.severe(error)
+        guard let vaccines = vaccineManager.vaccines() else {
+            log.error("Missing vaccines")
+            return
         }
         
         sectionTitles = vaccineTitlesOrderedAlphabetically(from: vaccines)
@@ -35,14 +31,16 @@ class VaccineGridViewController: UIViewController {
     
     fileprivate func vaccineTitlesOrderedAlphabetically(from vaccines: [Vaccine]) -> [String] {
         return vaccines
-            .map { $0.title }
+            .map { $0.title! }
             .sorted { $0 < $1 }
             .reduce([]) { $0.contains($1) ? $0 : $0 + [$1] }
     }
     
     fileprivate func vaccinesGroupedByTitle(from vaccines: [Vaccine], andTitles titles: [String]) -> [[Vaccine]] {
         return titles.map { (title) in
-            vaccines.filter { $0.title == title }
+            vaccines
+                .filter { $0.title == title }
+                .sorted { ($0.estimatedDate as! Date) < ($1.estimatedDate as! Date) }
         }
     }
     

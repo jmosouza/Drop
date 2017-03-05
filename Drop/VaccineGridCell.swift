@@ -38,7 +38,6 @@ class VaccineGridCell: UICollectionViewCell {
     func handleLongPressGesture(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
             vaccine.toggleState()
-            vaccine.save()
             refreshContent()
             
             // Announce vaccine state out load.

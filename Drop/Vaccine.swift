@@ -9,12 +9,7 @@
 import Foundation
 import SwiftDate
 
-class Vaccine {
-    
-    var title: String
-    var estimatedDate: Date
-    var recordedDate: Date?
-    var managedObject: VaccineMO?
+extension Vaccine {
     
     var isTaken: Bool {
         get {
@@ -22,58 +17,13 @@ class Vaccine {
         }
     }
     
-    // MARK - Init
-    
-    /** Default initializer */
-    init(title: String, recordedDate: Date? = nil, estimatedDate: Date) {
-        self.title = title
-        self.recordedDate = recordedDate
-        self.estimatedDate = estimatedDate
-    }
-    
-    /** Initialize by adding an age to a birth date. */
-    convenience init(title: String, birth: Date, age: TimeInterval) {
-        let date = birth.addingTimeInterval(age)
-        self.init(title: title, estimatedDate: date)
-    }
-    
-    /** Initialize from a managed object. */
-    convenience init(managedObject: VaccineMO) {
-        self.init(
-            title: managedObject.title!,
-            recordedDate: managedObject.recordedDate as Date?,
-            estimatedDate: managedObject.estimatedDate! as Date)
-        self.managedObject = managedObject
-    }
-    
-    // MARK - Misc
-    
-    func save() {
-        guard managedObject != nil else {
-            log.debug("Vaccine has no managed object")
-            return
-        }
-        managedObject!.title = title
-        managedObject!.recordedDate = recordedDate as NSDate?
-        managedObject!.estimatedDate = estimatedDate as NSDate?
-        do {
-            try managedObject!.managedObjectContext?.save()
-            log.debug("Vaccine saved managed object")
-        }
-        catch {
-            log.debug("Vaccine can't save managed object")
-            log.error(error)
-        }
-    }
-    
-    /** 
+    /**
      Set the value of recordedDate. If currently nil, set to estimatedDate. If currently has a value, set to nil.
      */
     func toggleState() {
         recordedDate = recordedDate == nil
             ? estimatedDate
             : nil
-        save()
     }
     
     /**
@@ -89,7 +39,7 @@ class Vaccine {
      */
     func readableAge(forBirthDate birthDate: Date) -> String? {
         do {
-            let vaccinationDate = recordedDate ?? estimatedDate
+            let vaccinationDate = estimatedDate as! Date
             return try vaccinationDate.timeComponents(
                 to: birthDate,
                 options: ComponentsFormatterOptions(
@@ -112,7 +62,12 @@ class Vaccine {
      - returns: A text description designed for screen readers.
      */
     func accessibilityLabel(forBirthDate birthDate: Date) -> String? {
+        guard let title = self.title else {
+            log.error("Missing title")
+            return nil
+        }
         guard let age = readableAge(forBirthDate: birthDate) else {
+            log.error("Missing age")
             return nil
         }
         let taken = isTaken

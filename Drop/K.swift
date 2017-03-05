@@ -30,16 +30,16 @@ struct K {
                 case dtap = "DTaP"
             }
             
-            static let usaBirthToFifteenMonths_2017_02: [Vaccine] = [
-                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 0.months.from(date: birth)!),
-                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 1.months.from(date: birth)!),
-                Vaccine(title: Agent.hepatitisB.rawValue, estimatedDate: 6.months.from(date: birth)!),
-                Vaccine(title: Agent.rotavirus.rawValue, estimatedDate: 2.months.from(date: birth)!),
-                Vaccine(title: Agent.rotavirus.rawValue, estimatedDate: 4.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 2.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 4.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 6.months.from(date: birth)!),
-                Vaccine(title: Agent.dtap.rawValue, estimatedDate: 15.months.from(date: birth)!)
+            static let usaBirthToFifteenMonths_2017_02 = [
+                (title: Agent.hepatitisB.rawValue, estimatedDate: 0.months.from(date: birth)!),
+                (title: Agent.hepatitisB.rawValue, estimatedDate: 1.months.from(date: birth)!),
+                (title: Agent.hepatitisB.rawValue, estimatedDate: 6.months.from(date: birth)!),
+                (title: Agent.rotavirus.rawValue, estimatedDate: 2.months.from(date: birth)!),
+                (title: Agent.rotavirus.rawValue, estimatedDate: 4.months.from(date: birth)!),
+                (title: Agent.dtap.rawValue, estimatedDate: 2.months.from(date: birth)!),
+                (title: Agent.dtap.rawValue, estimatedDate: 4.months.from(date: birth)!),
+                (title: Agent.dtap.rawValue, estimatedDate: 6.months.from(date: birth)!),
+                (title: Agent.dtap.rawValue, estimatedDate: 15.months.from(date: birth)!)
             ]
         
         }

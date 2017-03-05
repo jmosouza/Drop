@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="0.1.0">
-    <entity name="VaccineMO" representedClassName="VaccineMO" syncable="YES" codeGenerationType="class">
+    <entity name="Vaccine" representedClassName="Vaccine" syncable="YES" codeGenerationType="class">
         <attribute name="estimatedDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="recordedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" attributeType="String" maxValueString="100" defaultValueString="New Vaccine" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VaccineMO" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Vaccine" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

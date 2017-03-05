@@ -37,18 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Initial data
             let vaccines = K.Initial.Vaccines.usaBirthToFifteenMonths_2017_02
+            let persistentContainer = CoreDataManager.shared.persistentContainer
             let context = persistentContainer.viewContext
             
             for vaccine in vaccines {
-                let v = VaccineMO(context: context)
-                v.title = vaccine.title
-                v.recordedDate = vaccine.recordedDate as NSDate?
-                v.estimatedDate = vaccine.estimatedDate as NSDate?
+                let newVaccine = Vaccine(context: context)
+                newVaccine.title = vaccine.title
+                newVaccine.estimatedDate = vaccine.estimatedDate as NSDate?
             }
             
             do {
-                log.debug(context.hasChanges)
-                log.debug(context.insertedObjects)
                 try context.save()
             } catch {
                 log.severe(error)
@@ -59,32 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // MARK: - Core Data stack
-    
-    var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Drop")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-    
-    // MARK: - Core Data Saving support
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+    func applicationWillTerminate(_ application: UIApplication) {
+        CoreDataManager.shared.saveContext()
     }
-
-
 
 }
